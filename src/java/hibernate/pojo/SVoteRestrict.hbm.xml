@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2015 12:19:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.SVoteRestrict" table="s_vote_restrict" schema="selfcraze" optimistic-lock="version">
+        <id name="SId" type="big_decimal">
+            <column name="s_id" precision="32" scale="0" />
+            <generator class="native" />
+        </id>
+        <property name="SVoter" type="string">
+            <column name="s_voter" not-null="true" />
+        </property>
+        <property name="SVotee" type="string">
+            <column name="s_votee" not-null="true" />
+        </property>
+        <property name="SVoteFlag" type="java.lang.Boolean">
+            <column name="s_vote_flag" />
+        </property>
+    </class>
+</hibernate-mapping>

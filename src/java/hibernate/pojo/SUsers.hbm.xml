@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2015 12:19:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.SUsers" table="s_users" schema="selfcraze" optimistic-lock="version">
+        <id name="SHandle" type="string">
+            <column name="s_handle" />
+            <generator class="assigned" />
+        </id>
+        <property name="SEmail" type="string">
+            <column name="s_email" not-null="true" />
+        </property>
+        <property name="SFirstName" type="string">
+            <column name="s_first_name" not-null="true" />
+        </property>
+        <property name="SLastName" type="string">
+            <column name="s_last_name" not-null="true" />
+        </property>
+        <property name="SSex" type="string">
+            <column name="s_sex" not-null="true" />
+        </property>
+        <property name="SCollege" type="string">
+            <column name="s_college" />
+        </property>
+        <set name="SContests" table="s_contest" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="s_handle" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.pojo.SContest" />
+        </set>
+        <set name="SHallOfFames" table="s_hall_of_fame" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="s_handle" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.pojo.SHallOfFame" />
+        </set>
+    </class>
+</hibernate-mapping>

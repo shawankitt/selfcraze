@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2015 12:19:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.SHallOfFame" table="s_hall_of_fame" schema="selfcraze" optimistic-lock="version">
+        <id name="SId" type="big_decimal">
+            <column name="s_id" precision="32" scale="0" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="SUsers" class="hibernate.pojo.SUsers" fetch="select">
+            <column name="s_handle" not-null="true" />
+        </many-to-one>
+        <property name="SPhoto" type="binary">
+            <column name="s_photo" />
+        </property>
+        <property name="SRank" type="big_decimal">
+            <column name="s_rank" precision="131089" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

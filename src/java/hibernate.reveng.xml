@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="selfcraze"/>
+  <table-filter match-name="s_vote_restrict"/>
+  <table-filter match-name="s_contest"/>
+  <table-filter match-name="s_users"/>
+  <table-filter match-name="s_hall_of_fame"/>
+</hibernate-reverse-engineering>
